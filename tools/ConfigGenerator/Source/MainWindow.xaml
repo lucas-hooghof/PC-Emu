@@ -1,0 +1,42 @@
+<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:av="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="av" x:Class="ConfigGenerator.MainWindow"
+        Title="Config Generator" Height="300" Width="500">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Margin="0,0,0,10">
+            <Label Content="Architecture:" VerticalAlignment="Center" Width="100"/>
+            <ComboBox x:Name="ArchitectureComboBox" Width="250">
+                <ComboBoxItem Content="x86"/>
+                <ComboBoxItem Content="x64"/>
+                <ComboBoxItem Content="ARM"/>
+            </ComboBox>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="1" Margin="0,0,0,10">
+            <Label Content="Firmware:" VerticalAlignment="Center" Width="100"/>
+            <ComboBox x:Name="FirmwareComboBox" Width="250" Height="20">
+                <ComboBoxItem Content="BIOS"/>
+                <ComboBoxItem Content="UEFI"/>
+            </ComboBox>
+        </StackPanel>
+
+        <!-- Generate Button -->
+        <Button x:Name="GenerateButton" Content="Generate" Width="100" Grid.Row="2"
+                HorizontalAlignment="Left" Click="GenerateButton_Click"  RenderTransformOrigin="-0.95,-0.317" Margin="370,105,0,35"/>
+        <Label Content="Output File:" VerticalAlignment="Top" HorizontalAlignment="Left" Width="100" Margin="0,20,0,0"  RenderTransformOrigin="-0.95,-0.317" Grid.Row="2"></Label>
+        <Button x:Name="SelectFileButton" Content="Select file" Width="83" Grid.Row="2"
+                HorizontalAlignment="Left" Click="SelectFile_Click"  RenderTransformOrigin="-0.95,-0.317" Margin="105,20,0,108"/>
+        <Label Content="Disk File:" VerticalAlignment="Center" HorizontalAlignment="Left" Width="100"  RenderTransformOrigin="-0.95,-0.317" Grid.Row="2"/>
+        <Button x:Name="SelctDiskImage" Content="Select Image" Width="83" Grid.Row="2"
+                HorizontalAlignment="Left" Click="SelectDisk_Click"  RenderTransformOrigin="-0.95,-0.317" Margin="105,67,0,61"/>
+
+    </Grid>
+
+</Window>
